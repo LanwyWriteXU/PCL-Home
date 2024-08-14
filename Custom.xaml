@@ -1,0 +1,251 @@
+﻿<!--	
+   _____  __     __  ____    ______   _____    _   _   ______   _  __   ____  
+  / ____| \ \   / / |  _ \  |  ____| |  __ \  | \ | | |  ____| | |/ /  / __ \ 
+ | |       \ \_/ /  | |_) | | |__    | |__) | |  \| | | |__    | ' /  | |  | |
+ | |        \   /   |  _ <  |  __|   |  _  /  | . ` | |  __|   |  <   | |  | |
+ | |____     | |    | |_) | | |____  | | \ \  | |\  | | |____  | . \  | |__| |
+  \_____|    |_|    |____/  |______| |_|  \_\ |_| \_| |______| |_|\_\  \____/ 
+                                                                                                                                                         
+
+Cyberexplorer all right reserved,
+*协议遵从GPL2，最终权利属于Cyberexplorer*
+-->
+
+<!--这是一个简单的PCL主页开头，我会先在这加一个随机二次元图片API，帅！-->
+
+<Image Margin = "-25,-25,-25,0" Height = "auto" Width = "auto" HorizontalAlignment = "Center" Source = "{Binding ElementName = top_pic,Path = Text}" ToolTip = "这是一张Cyberexplorer精心准备的二次元图片!" />
+
+<!--创建一个"回声洞""-->
+
+<Border Margin = "-25,-27,-25,5" Padding = "0,6" BorderThickness = "1" Background = "{DynamicResource ColorBrush5}" CornerRadius = "0" VerticalAlignment = "Top" BorderBrush = "{DynamicResource ColorBrush3}" Opacity = "0.8" >
+	<Grid Margin = "0,0,0,0">
+		<TextBlock FontWeight = "Bold" FontSize = "12" HorizontalAlignment = "Center" Foreground = "#FF000000" Text = "{cave}" />
+	</Grid>
+</Border>
+
+<!--
+	然后这是一个Grid
+	左边放一个“欢迎回来”
+	右边放一个功能列表
+-->
+
+<Grid>
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition Width = "0.4*"/>
+		<ColumnDefinition Width = "1*"/>
+	</Grid.ColumnDefinitions>
+	<local:MyCard Grid.Column = "0" Title = "欢迎回来!" Margin = "0,0,5,5" >
+		<StackPanel Margin = "25,30,23,10">
+    	<TextBlock TextWrapping = "Wrap" Margin = "0,0,0,0"
+    		Text = "来到PCL启动器的主页，你想要干什么呢~&#xA;为什么不选择来一场痛快的HYPIXEL起床战争呢？" />
+			<local:MyTextButton Margin = "0,0,0,0" ToolTip = "使用名称为1.8.9的客户端加入HYPIXEL服务器" Text = "HYPIXEL，启动!" EventType = "启动游戏" EventData = "1.8.9|mc.hypixel.net"/>
+			<TextBlock TextWrapping = "Wrap" Margin = "0,0,0,0" Text = "或者酣畅淋漓的“落花星雨”呢？" />
+			<local:MyTextButton Margin = "0,0,0,0" ToolTip = "使用名称为1.8.9的客户端加入落花星雨服务器" Text = "落花星雨，启动!" EventType = "启动游戏" EventData = "1.8.9|wdsj.net"/>
+		</StackPanel>
+	</local:MyCard>
+	<local:MyCard Grid.Column = "1" Title = "功能列表" Margin = "0,0,0,5" >
+		<StackPanel Margin = "25,30,25,5">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width = "1*" />
+					<ColumnDefinition Width = "1*" />
+				</Grid.ColumnDefinitions>
+				<local:MyListItem  Margin = "-5,0,0,0" Grid.Column = "0" Logo = "https://user-assets.sxlcdn.com/images/1114044/FvOBbBQ_9TxYOKGUmfEJyuJZat7y.png?imageMogr2/strip/auto-orient/thumbnail/1200x9000%3E/format/png" Title = "今日人品~" Info = "PCL内置的高级玩意"  EventType = "今日人品" Type = "Clickable" />
+				<local:MyListItem  Margin = "0,0,-5,0" Grid.Column = "1" Logo = "https://user-assets.sxlcdn.com/images/1114044/Fj0FFO-_Vt4wWSAAXrw_CbEGX6u9.png?imageMogr2/strip/auto-orient/thumbnail/1200x9000%3E/format/png" Title = "清理内存" Info = "据说可以清除1/3的内存哦!" EventType = "内存优化" Type = "Clickable" />
+				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width = "1*" />
+						<ColumnDefinition Width = "1*" />
+					</Grid.ColumnDefinitions>
+					<local:MyListItem  Margin = "-5,0,0,0" Grid.Column = "0" Logo = "https://user-assets.sxlcdn.com/images/1114044/FshtJ6JUCAsVTcAvJIGYW_6oWG0x.png?imageMogr2/strip/auto-orient/thumbnail/1200x9000%3E/format/png" Title = "清理垃圾" Info = "清理游戏缓存等垃圾"  EventType = "清理垃圾" Type = "Clickable" />
+					<local:MyListItem  Margin = "0,0,-5,0" Grid.Column = "1" Logo = "https://user-assets.sxlcdn.com/images/1114044/FnQ_HTiAYuhzzEw0OW-3R1TufNF0.png?imageMogr2/strip/auto-orient/thumbnail/1200x9000%3E/format/png" Title = "刷新主页" Info = "主页更新?刷新看看!"  EventType = "刷新主页" Type = "Clickable" />
+				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width = "1*" />
+						<ColumnDefinition Width = "1*" />
+					</Grid.ColumnDefinitions>
+					<local:MyListItem Margin = "-5,0,0,5" Grid.Column = "0" 
+						Logo = "https://user-assets.sxlcdn.com/images/1114044/FoiOrTm5mJytswi2_3XAJJXorCDN.png?imageMogr2/strip/auto-orient/thumbnail/1200x9000%3E/format/png" Title = "MC新闻" Info = "由&quot;最亮的信标&quot;制作的新闻主页" EventType = "打开帮助" EventData = "https://news.bugjump.net/News.json" Type = "Clickable" />
+				</Grid>
+			</StackPanel>
+	</local:MyCard>
+</Grid>
+
+<!--这是一个小组件-->
+
+<local:MyCard Title = "小组件" Margin = "0,0,0,5" CanSwap = "True" IsSwaped = "True">
+  <Grid UseLayoutRounding = "True" Margin = "0,35,0,10">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width = "220"/>
+  		<ColumnDefinition Width = "*"/>
+    </Grid.ColumnDefinitions>
+    <Calendar Margin = "0,0,0,0" Grid.Column = "0"/>
+    <InkCanvas EditingMode = "Ink" Margin = "0,0,15,0" Grid.Column = "1" MaxHeight = "200" MinHeight = "165" Background = "{DynamicResource ColorBrush5}"/>
+  </Grid>
+</local:MyCard>
+
+<!-- tab!帅! -->
+
+<local:MyCard Margin = "0,0,0,5" Title = "" CanSwap = "False">
+	<TabControl Margin = "10,10,10,10" Grid.Column = "0">
+		<TabItem Background = "{DynamicResource ColorBrush7}" Foreground = "#ffffff" >
+			<TabItem.Header>
+					网站
+			</TabItem.Header>
+			<TabControl Margin = "-3,-1,-3,-3" Grid.Column = "0" TabIndex = "2">
+				<TabItem Background = "{DynamicResource ColorBrush7}" >
+					<TabItem.Header>
+							视频网站
+					</TabItem.Header>
+					<StackPanel Margin = "5,5,5,5">
+						<local:MyListItem  Margin = "0,0,0,0" Logo = "https://img.ixintu.com/download/jpg/20201029/f3167643de69030781d74aaa62f03695_512_512.jpg!con" Title = "Bilibili" Info = "哔哩哔哩干杯！" EventType = "打开网页" EventData = "https://www.bilibili.com/" Type = "Clickable" />
+						<local:MyListItem  Margin = "0,0,0,0" Logo = "https://img.moegirl.org.cn/common/thumb/0/05/Logo_youtube.png/600px-Logo_youtube.png" Title = "YouTube" Info = "BiliBili正在油管化！" EventType = "打开网页" EventData = "https://www.youtube.com/" Type = "Clickable" />
+						<local:MyListItem  Margin = "0,0,0,0" Logo = "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/8a/54/a6/8a54a680-3e3e-d5fa-e7a3-3d6626bac62c/source/0x0ss-85.png" Title = "优酷" Info = "你要知道，这世界很酷！" EventType = "打开网页" EventData = "https://youku.com/" Type = "Clickable" />
+						<local:MyListItem  Margin = "0,0,0,0" Logo = "https://gd-hbimg.huaban.com/1abd76bd0105ab9d24f59c8493cf91224e6910847f28-GLOI0h" Title = "腾讯视频" Info = "最适合中国宝宝体质的视频网站(" EventType = "打开网页" EventData = "https://v.qq.com/" Type = "Clickable" />
+						<local:MyListItem  Margin = "0,0,0,0" Logo = "https://img.tukuppt.com/png_preview/00/07/07/iNAzzqd65O.jpg" Title = "樱花动漫" Info = "藏在被窝看动漫" EventType = "打开网页" EventData = "https://www.zkk79.com/" Type = "Clickable" />
+					</StackPanel>
+				</TabItem>
+				<TabItem Background = "{DynamicResource ColorBrush7}" >
+					<TabItem.Header>
+							EMPTY
+					</TabItem.Header>
+				</TabItem>
+			</TabControl>
+		</TabItem>
+		<TabItem Background = "{DynamicResource ColorBrush7}" >
+			<TabItem.Header>
+					EMPTY
+			</TabItem.Header>
+		</TabItem>
+	</TabControl>
+</local:MyCard>
+
+<!--为什么不用PCL启动其他的MC启动器呢？-->
+
+<local:MyCard Title = "启动其他启动器(尊嘟假嘟?)" Margin = "0,0,0,5" CanSwap = "True" IsSwaped = "True">
+	<StackPanel Margin = "15,40,15,10">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width = "1*" />
+				<ColumnDefinition Width = "1*" />
+				<ColumnDefinition Width = "1*" />
+			</Grid.ColumnDefinitions>
+				<local:MyButton Grid.Column = "0" Margin = "0,0,5,0" Height = "30"  Text = "HMCL，启动!" EventType = "打开文件" EventData = "HMCL\HMCL.exe" ColorType = "Highlight" />
+				<local:MyButton Grid.Column = "1" Margin = "0,0,5,0" Height = "30" Text = "BakaXL，启动!" EventType = "打开文件" EventData = "BakaXL\BakaXL.exe" ColorType = "Highlight" />
+				<local:MyButton Grid.Column = "2" Margin = "0,0,0,0" Height = "30" Text = "Bloxd，启动!" EventType = "打开网页" EventData = "https://bloxd.io/" ColorType = "Highlight" />
+		</Grid>
+	</StackPanel>
+</local:MyCard>
+
+<!--这是一个下载文件的Grid，很酷，不是吗？-->
+
+<local:MyCard Title = "下载" Margin = "0,0,0,5" CanSwap = "True" IsSwaped = "True">
+	<StackPanel Margin = "15,40,15,10">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width = "0.3*" />
+				<ColumnDefinition Width = "2*" />
+				<ColumnDefinition Width = "0.5*" />
+			</Grid.ColumnDefinitions>
+			<TextBlock Grid.Column = "0" Margin = "0,0,5,7" Text = "下载链接:" VerticalAlignment = "Center" />
+			<local:MyTextBox Grid.Column = "1" Margin = "0,0,5,7" Name = "web" VerticalAlignment = "Center" Height = "30" />
+			<local:MyButton EventType = "下载文件" EventData = "{Binding ElementName = web,Path = Text}" Grid.Column = "2" VerticalAlignment = "Center" Text = "下载文件" Margin = "0,0,5,7" Height = "30" Padding = "13,0,13,0" ColorType = "Highlight" />
+		</Grid>
+		<local:MyHint IsWarn="False" Text="使用PCL多线程高速下载，你的下一个启动器，何必是启动器!" Margin = "0,0,0,5" />
+		<local:MyHint IsWarn="True" Text="下载链接必须为https://或者http://开头，有些网址可能无法下载!" />
+	</StackPanel>
+</local:MyCard>
+
+<!--这是一些信息，可能没啥卵用-->
+
+<local:MyCard Title = "调试信息" Margin = "0,0,0,5" CanSwap = "True" IsSwaped = "True" >
+	<StackPanel Margin = "15,40,15,10">
+		<local:MyHint Margin = "0,0,0,5" IsWarn = "False" Text = "你的PCL启动器位于&quot;{path}&quot;" EventType = "打开文件" EventData = "explorer.exe|/select,{path}PCL" ToolTip = "点击以在文件夹显示PCL文件夹" />
+		<local:MyHint Margin = "0,0,0,5" IsWarn = "False" Text = "你的HMCL启动器位于&quot;{path}PCL\HMCL&quot;" EventType="打开文件" EventData = "explorer.exe|/select,{path}PCL\HMCL\HMCL.exe" ToolTip = "点击以在文件夹显示HMCL" />
+		<local:MyHint Margin = "0,0,0,5" IsWarn = "False" Text = "你的BakaXL启动器位于&quot;{path}PCL\BakaXL&quot;" EventType="打开文件" EventData = "explorer.exe|/select,{path}PCL\BakaXL\" ToolTip = "点击以显示BaKaXL文件夹" />
+		<local:MyHint Margin = "0,0,0,0" Text = "如果上述加载失败，请点击这个提示前往下载主页资源qwq(密码:pcl2)" EventType = "打开网页" EventData = "https://pgs.lanzoub.com/b00l14kizg" />
+	</StackPanel>
+</local:MyCard>
+
+<!--主页设置-->
+
+<local:MyCard Title = "主页设置" Margin = "0,0,0,5" CanSwap = "True" IsSwaped = "True">
+	<StackPanel Margin = "15,35,15,10" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width = "165" />
+				<ColumnDefinition Width = "1.2*" />
+				<ColumnDefinition Width = "75" />
+			</Grid.ColumnDefinitions>
+			<!--通过一个下拉框选择头图图源-->
+			<TextBlock Margin = "0,0,5,0" Grid.Column = "0" VerticalAlignment = "Center" Text = "设置主页二次元头图图源：" />
+			<local:MyComboBox Margin = "0,0,5,0" Grid.Column = "1" Name = "top_pic" Height = "30" SelectedIndex = "1" VerticalAlignment = "Center" >
+				<local:MyComboBoxItem Content = "https://api.miaomc.cn/image/get" />
+				<local:MyComboBoxItem Content = "https://api.lqbby.com/api/pc" />
+				<local:MyComboBoxItem Content = "https://imgapi.lie.moe/random" />
+				<local:MyComboBoxItem Content = "https://t.mwm.moe/pc" />
+				<local:MyComboBoxItem Content = "https://www.dmoe.cc/random.php" />
+				<local:MyComboBoxItem Content = "https://img.paulzzh.com/touhou/random" />
+				<local:MyComboBoxItem Content = "https://image.anosu.top/pixiv/direct?r18=1" />
+				<local:MyComboBoxItem Content = "https://moe.jitsu.top/r18" />
+			</local:MyComboBox>
+			<local:MyButton Margin = "0,0,0,0" Grid.Column = "2" Height = "30" Text = "复制链接" VerticalAlignment = "Center" EventType = "复制文本" EventData = "{Binding ElementName = top_pic,Path = Text}" ColorType = "Highlight" />
+		</Grid>
+		<!--
+		<local:MySlider Margin = "0,10,0,5" MaxValue = "10" Name = "abc" />
+		<TextBlock Text = "{Binding ElementName = abc,Path = Value}" />
+		还在研究怎么写这个Slider……
+		-->
+	</StackPanel>
+</local:MyCard>
+
+<!--优雅地结束全部-->
+
+<Border Background = "#A0FFFFFF" Height = "20720" Margin = "-25,0,-25,-20500" BorderThickness = "0,2,0,0" BorderBrush = "#AAAAAA">
+	<StackPanel Margin = "0,0,0,5">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width = "140"/>
+				<ColumnDefinition Width = "*" />
+			</Grid.ColumnDefinitions>
+			<StackPanel Margin = "15,10,0,5" Grid.Column = "0">
+				<Image Width = "140" Source = "https://i1.hdslb.com/bfs/face/0d6f5088c8500836c96453a49d2abff6fc3920df.jpg" />
+			</StackPanel>
+			<Grig>
+				<Grid.RowDefinitions>
+					<RowDefinition Height = "1*" />
+					<RowDefinition Height = "1*" />
+					<RowDefinition Height = "1*" />
+					<RowDefinition Height = "1*" />
+				</Grid.RowDefinitions>
+			<StackPanel Margin = "5,10,15,5" Grid.Column = "1">
+				<Border Grid.Row = "0" Margin = "0,0,0,5" Padding = "0,6" BorderThickness = "1" Background = "{DynamicResource ColorBrush5}" CornerRadius = "3" VerticalAlignment = "Top" BorderBrush = "{DynamicResource ColorBrush3}" Opacity = "0.8" >
+					<Grid Margin = "10,0,0,0">
+						<TextBlock FontWeight = "Bold" FontSize = "12" VerticalAlignment = "Center" Foreground = "#FF000000" Text="📰 本主页由 Cyberexplorer 制作并分发" FontFamily="微软雅黑" />
+					</Grid>
+				</Border>
+				<local:MyButton Grid.Row = "1" Height = "*" Margin = "0,0,0,5" Text = "关于作者" ColorType = "Highlight" />
+				<local:MyButton Grid.Row = "2" Height = "*" Margin = "0,0,0,5" Text = "FAQ" ColorType = "Highlight" />
+				<local:MyButton Grid.Row = "3" Height = "*" Margin = "0,0,0,0" Text = "查看源码" ColorType = "Red" />
+			</StackPanel>
+		</Grid>
+		<local:MyTextButton Margin = "0,0,0,0" Text = "*协议遵从GPL2，最终权利属于Cyberexplorer*" HorizontalAlignment = "Center" />
+		<!--到底啦！-->
+		<Border Height = "20500" Background = "{DynamicResource ColorBrush4}" Opacity = "0.3" Margin = "-40,10,0,0">
+			<StackPanel>
+				<Grid Margin = "0,15,0,15">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width = "1*" />
+						<ColumnDefinition Width = "100" />
+						<ColumnDefinition Width = "1*" />
+					</Grid.ColumnDefinitions>
+					<Line X1 = "0" X2 = "100" Stroke = "{DynamicResource ColorBrush7}" StrokeThickness = "2" HorizontalAlignment = "Center" Stretch = "Fill" Grid.Column = "0" />
+					<TextBlock Text = "到 底 啦 !" HorizontalAlignment = "Center" FontSize = "16" Foreground = "{DynamicResource ColorBrush7}" Grid.Column = "1" VerticalAlignment = "Center" />
+					<Line X1 = "0" X2 = "100" Stroke = "{DynamicResource ColorBrush7}" StrokeThickness = "2" HorizontalAlignment = "Center" Stretch = "Fill" Grid.Column = "2" />
+				</Grid>
+			</StackPanel>
+		</Border>
+	</StackPanel>
+</Border>
